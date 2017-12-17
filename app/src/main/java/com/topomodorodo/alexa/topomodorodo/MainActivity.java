@@ -1,9 +1,11 @@
 package com.topomodorodo.alexa.topomodorodo;
 
+import android.arch.persistence.room.Room;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Time;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,11 +19,15 @@ public class MainActivity extends AppCompatActivity {
     Button startBtn;
     TextView time;
     Handler handler = new Handler();
+    AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name1").build();
         startBtn = findViewById(R.id.start);
         time = findViewById(R.id.time);
         time.setText("00:00");
@@ -31,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
             int minutes = 0;
             int hours = 0;
             Date timeIntimer = new Date();
-            Handler handler = new Handler();
             SimpleDateFormat dateFormat1 = new SimpleDateFormat("mm:ss");
             SimpleDateFormat dateFormat2 = new SimpleDateFormat("HH:mm:ss");
 
@@ -53,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 else handler.post(() -> time.setText(dateFormat2.format(timeIntimer)));
             }
         }, 0, 1000);
+
+
+        startBtn.setOnClickListener(view -> new Thread(() -> {
+            db.userDao().insertAll(new User("alex", "top"));
+            String firstName = db.userDao().getAll().get(0).getFirstName();
+            handler.post(() -> startBtn.setText(firstName));
+        }).start());
     }
 
 
