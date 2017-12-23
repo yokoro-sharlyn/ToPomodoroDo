@@ -1,4 +1,4 @@
-package com.topomodorodo.alexa.topomodorodo;
+package com.topomodorodo.alexa.topomodorodo.example;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
