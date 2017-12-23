@@ -1,4 +1,4 @@
-package com.topomodorodo.alexa.topomodorodo.pomodoro;
+package com.topomodorodo.alexa.topomodorodo.pomodoro.state;
 
 
 public class PomodoroStatesController {

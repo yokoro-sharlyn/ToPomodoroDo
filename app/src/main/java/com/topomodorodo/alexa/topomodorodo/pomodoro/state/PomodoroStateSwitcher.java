@@ -1,10 +1,11 @@
-package com.topomodorodo.alexa.topomodorodo.pomodoro;
+package com.topomodorodo.alexa.topomodorodo.pomodoro.state;
 
 
 import android.content.Context;
 
-import com.topomodorodo.alexa.topomodorodo.OnTimeChanged;
 import com.topomodorodo.alexa.topomodorodo.database.PomodoroDatabase;
+import com.topomodorodo.alexa.topomodorodo.pomodoro.timer.OnTimeChanged;
+import com.topomodorodo.alexa.topomodorodo.pomodoro.timer.PomodoroTimer;
 
 public class PomodoroStateSwitcher {
     private PomodoroTimer pomodoroTimer;

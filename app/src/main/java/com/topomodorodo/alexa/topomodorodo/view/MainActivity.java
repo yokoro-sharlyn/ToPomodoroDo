@@ -1,15 +1,14 @@
-package com.topomodorodo.alexa.topomodorodo;
+package com.topomodorodo.alexa.topomodorodo.view;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.topomodorodo.alexa.topomodorodo.database.PomodoroDatabase;
-import com.topomodorodo.alexa.topomodorodo.pomodoro.OnPomodoroStateChanged;
-import com.topomodorodo.alexa.topomodorodo.pomodoro.PomodoroStateSwitcher;
+import com.topomodorodo.alexa.topomodorodo.R;
+import com.topomodorodo.alexa.topomodorodo.pomodoro.state.OnPomodoroStateChanged;
+import com.topomodorodo.alexa.topomodorodo.pomodoro.state.PomodoroStateSwitcher;
 
 public class MainActivity extends AppCompatActivity {
     Button startBtn;

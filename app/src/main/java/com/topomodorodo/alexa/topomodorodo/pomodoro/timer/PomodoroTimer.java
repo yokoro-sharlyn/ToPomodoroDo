@@ -1,7 +1,7 @@
-package com.topomodorodo.alexa.topomodorodo.pomodoro;
+package com.topomodorodo.alexa.topomodorodo.pomodoro.timer;
 
 
-import com.topomodorodo.alexa.topomodorodo.OnTimeChanged;
+import com.topomodorodo.alexa.topomodorodo.pomodoro.timer.OnTimeChanged;
 
 import org.jetbrains.annotations.Contract;
 
@@ -25,7 +25,7 @@ public class PomodoroTimer {
     private OnTimeChanged onTimeChanged;
     private Timer timer;
 
-    PomodoroTimer(OnTimeChanged onTimeChanged) {
+    public PomodoroTimer(OnTimeChanged onTimeChanged) {
         this.onTimeChanged = onTimeChanged;
         updateCalendar(0, 0, 0);
         this.timer = new Timer();
@@ -41,12 +41,12 @@ public class PomodoroTimer {
         };
     }
 
-    void startPomodoro() {
+    public void startPomodoro() {
         timer = new Timer();
         timer.schedule(getTask(), 0, 1000);
     }
 
-    void pausePomodoro() {
+    public void pausePomodoro() {
         timer.cancel();
     }
 
@@ -54,7 +54,7 @@ public class PomodoroTimer {
         return getTimeInString(calendar.getTime());
     }
 
-    void resetPomodoro() {
+    public void resetPomodoro() {
         timer.purge();
         seconds = 0;
         minutes = 0;
