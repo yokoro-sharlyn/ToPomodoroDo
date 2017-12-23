@@ -28,7 +28,7 @@ public class ListPomodoroActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.pomodoro_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(new PomodoroAdapter(pomodoroDatabase.getAllPomodoro()));
-
+//help
     }
 
 }
