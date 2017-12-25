@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
 public class PomodoroDatabase {
     PomodoroDatabaseAbstract db;
@@ -22,10 +23,26 @@ public class PomodoroDatabase {
     }
 
     public void savePomodoro(String name, String startTime, String duration) {
-        new Thread(() -> db.pomodoroDao().insertAll(new Pomodoro(name, startTime, duration))).start();
+        new Thread(() -> {
+            db.pomodoroDao().insertAll(new Pomodoro(name, startTime, duration));
+            for (Pomodoro pomodoro : db.pomodoroDao().getAll()) {
+                Log.v("GGGG", "Ggg" + pomodoro.getName() + " " + pomodoro.getTimeDuration());
+            }
+        }).start();
     }
 
-    public List<Pomodoro> getAllPomodoro() {
-        return db.pomodoroDao().getAll();
+    public void getAllPomodoro(ResultListener resultListener) {
+        new Thread(() -> {
+            Log.v("GGGG", "Ggg start");
+            List<Pomodoro> pomodoroList = db.pomodoroDao().getAll();
+            for (Pomodoro pomodoro : pomodoroList) {
+                Log.v("GGGG", "Ggg" + pomodoro.getName() + " " + pomodoro.getTimeDuration());
+            }
+            resultListener.onResultCalculated(pomodoroList);
+        }).start();
+    }
+
+    public interface ResultListener {
+        void onResultCalculated(List<Pomodoro> pomodoroList);
     }
 }

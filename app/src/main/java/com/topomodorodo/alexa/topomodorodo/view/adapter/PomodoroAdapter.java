@@ -34,13 +34,13 @@ public class PomodoroAdapter extends RecyclerView.Adapter<PomodoroAdapter.Pomodo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return pomodoroList.size();
     }
 
-    public class PomodoroViewHolder extends RecyclerView.ViewHolder {
+    class PomodoroViewHolder extends RecyclerView.ViewHolder {
         TextView name, time, duration;
 
-        public PomodoroViewHolder(View view) {
+        PomodoroViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.pomodoro_name_text_view);
             time = view.findViewById(R.id.pomodoro_time_text_view);

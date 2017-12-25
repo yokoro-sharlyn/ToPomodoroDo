@@ -32,49 +32,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Duration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pomodoro_time_text_view_constant"
-        android:layout_marginLeft="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/pomodoro_time_text_view_constant" />
 
     <TextView
         android:id="@+id/pomodoro_name_text-view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="First Pomodoro"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="First Pomodoro"
-        android:layout_marginLeft="8dp" />
+        tools:text="First Pomodoro" />
 
     <TextView
         android:id="@+id/pomodoro_time_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Monday 12:36 "
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/pomodoro_name_text-view"
-        tools:text="Monday 12:36 "
-        android:layout_marginLeft="8dp" />
+        tools:text="Monday 12:36 " />
 
     <TextView
         android:id="@+id/pomodoro_duration_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="7m"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/pomodoro_time_text_view"
-        tools:text="7m"
-        android:layout_marginLeft="8dp" />
+        tools:text="7m" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -82,4 +82,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="86dp" />
+
+    <View
+        android:id="@+id/separate_line"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimary"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pomodoro_duration_text_view_constant" />
 </android.support.constraint.ConstraintLayout>

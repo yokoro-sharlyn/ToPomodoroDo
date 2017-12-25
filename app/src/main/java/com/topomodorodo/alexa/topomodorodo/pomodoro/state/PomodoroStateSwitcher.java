@@ -9,7 +9,7 @@ import com.topomodorodo.alexa.topomodorodo.pomodoro.timer.PomodoroTimer;
 
 public class PomodoroStateSwitcher {
     private PomodoroTimer pomodoroTimer;
-    private PomodoroState state;
+    private PomodoroTimerState state;
     private PomodoroDatabase pomodoroDatabase;
     private PomodoroStatesController pomodoroStatesController;
 
@@ -17,7 +17,7 @@ public class PomodoroStateSwitcher {
         this.pomodoroTimer = new PomodoroTimer(onTimeChanged);
         this.pomodoroStatesController = new PomodoroStatesController(onPomodoroStateChanged);
         this.pomodoroDatabase = new PomodoroDatabase(context);
-        changeState(PomodoroState.STOP);
+        changeState(PomodoroTimerState.STOP);
     }
 
     public void switchPomodoroState() {
@@ -33,15 +33,15 @@ public class PomodoroStateSwitcher {
 
     private void startPomodoro() {
         pomodoroTimer.startPomodoro();
-        changeState(PomodoroState.RUN);
+        changeState(PomodoroTimerState.RUN);
     }
 
     private void stopPomodoro() {
         pomodoroTimer.pausePomodoro();
-        changeState(PomodoroState.STOP);
+        changeState(PomodoroTimerState.STOP);
     }
 
-    private void changeState(PomodoroState newState) {
+    private void changeState(PomodoroTimerState newState) {
         state = newState;
         pomodoroStatesController.setState(state);
     }
@@ -51,7 +51,11 @@ public class PomodoroStateSwitcher {
         pomodoroTimer.resetPomodoro();
     }
 
-    enum PomodoroState {
-        RUN, STOP;
+    enum PomodoroTimerState {
+        RUN, STOP
+    }
+
+    enum PomodoroKind {
+        PAUSING, WORKING, RELAXATION
     }
 }
