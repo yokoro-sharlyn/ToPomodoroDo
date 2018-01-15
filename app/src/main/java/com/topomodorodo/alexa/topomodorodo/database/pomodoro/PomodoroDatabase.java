@@ -1,11 +1,12 @@
-package com.topomodorodo.alexa.topomodorodo.database;
+package com.topomodorodo.alexa.topomodorodo.database.pomodoro;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.util.Log;
 
+import com.topomodorodo.alexa.topomodorodo.entity.pomodoro.Pomodoro;
+
 import java.util.List;
-import java.util.concurrent.Callable;
 
 public class PomodoroDatabase {
     PomodoroDatabaseAbstract db;

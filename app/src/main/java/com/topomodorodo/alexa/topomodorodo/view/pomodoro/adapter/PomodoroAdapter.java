@@ -1,4 +1,4 @@
-package com.topomodorodo.alexa.topomodorodo.view.adapter;
+package com.topomodorodo.alexa.topomodorodo.view.pomodoro.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.topomodorodo.alexa.topomodorodo.R;
-import com.topomodorodo.alexa.topomodorodo.database.Pomodoro;
+import com.topomodorodo.alexa.topomodorodo.entity.pomodoro.Pomodoro;
 
 import java.util.List;
 

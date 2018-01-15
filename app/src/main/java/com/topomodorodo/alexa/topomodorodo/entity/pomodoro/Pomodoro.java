@@ -1,4 +1,4 @@
-package com.topomodorodo.alexa.topomodorodo.database;
+package com.topomodorodo.alexa.topomodorodo.entity.pomodoro;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

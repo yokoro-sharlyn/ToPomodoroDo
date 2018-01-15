@@ -1,7 +1,5 @@
-package com.topomodorodo.alexa.topomodorodo.pomodoro.timer;
+package com.topomodorodo.alexa.topomodorodo.logic.pomodoro.timer;
 
-
-import com.topomodorodo.alexa.topomodorodo.pomodoro.timer.OnTimeChanged;
 
 import org.jetbrains.annotations.Contract;
 

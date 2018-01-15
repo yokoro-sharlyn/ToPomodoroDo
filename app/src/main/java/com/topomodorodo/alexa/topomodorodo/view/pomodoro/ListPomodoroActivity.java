@@ -1,4 +1,4 @@
-package com.topomodorodo.alexa.topomodorodo.view;
+package com.topomodorodo.alexa.topomodorodo.view.pomodoro;
 
 
 import android.os.Bundle;
@@ -8,13 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.topomodorodo.alexa.topomodorodo.R;
-import com.topomodorodo.alexa.topomodorodo.database.Pomodoro;
-import com.topomodorodo.alexa.topomodorodo.database.PomodoroDatabase;
-import com.topomodorodo.alexa.topomodorodo.pomodoro.state.PomodoroStateSwitcher;
-import com.topomodorodo.alexa.topomodorodo.view.adapter.PomodoroAdapter;
-
-import java.util.LinkedList;
-import java.util.List;
+import com.topomodorodo.alexa.topomodorodo.database.pomodoro.PomodoroDatabase;
+import com.topomodorodo.alexa.topomodorodo.view.pomodoro.adapter.PomodoroAdapter;
 
 public class ListPomodoroActivity extends AppCompatActivity {
 

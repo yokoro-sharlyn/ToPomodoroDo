@@ -1,4 +1,4 @@
-package com.topomodorodo.alexa.topomodorodo.view;
+package com.topomodorodo.alexa.topomodorodo.view.pomodoro;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.topomodorodo.alexa.topomodorodo.R;
-import com.topomodorodo.alexa.topomodorodo.pomodoro.state.OnPomodoroStateChanged;
-import com.topomodorodo.alexa.topomodorodo.pomodoro.state.PomodoroStateSwitcher;
+import com.topomodorodo.alexa.topomodorodo.logic.pomodoro.state.OnPomodoroStateChanged;
+import com.topomodorodo.alexa.topomodorodo.logic.pomodoro.state.PomodoroStateSwitcher;
 
 public class MainActivity extends AppCompatActivity {
     Button startButton;
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(v -> pomodoroStateSwitcher.switchPomodoroState());
         saveButton.setOnClickListener(v -> pomodoroStateSwitcher.saveState());
         openListButton.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, ListPomodoroActivity.class);
             startActivity(intent);
         });

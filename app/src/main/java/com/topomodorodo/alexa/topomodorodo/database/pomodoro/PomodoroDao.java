@@ -1,9 +1,11 @@
-package com.topomodorodo.alexa.topomodorodo.database;
+package com.topomodorodo.alexa.topomodorodo.database.pomodoro;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+
+import com.topomodorodo.alexa.topomodorodo.entity.pomodoro.Pomodoro;
 
 import java.util.List;
 
