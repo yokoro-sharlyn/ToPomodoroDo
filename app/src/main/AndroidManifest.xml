@@ -14,21 +14,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.pomodoro.MainActivity" />
-        <activity android:name=".view.pomodoro.ListPomodoroActivity" />
+        <activity android:name=".old.view.pomodoro.MainActivity" />
+        <activity android:name=".old.view.pomodoro.ListPomodoroActivity" />
         <activity
-            android:name=".view.task.TaskListActivity"
+            android:name=".old.view.tasklist.TaskListActivity"
             android:label="@string/title_activity_task_list"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.task.CreateTaskActivity"
-            android:windowSoftInputMode="stateAlwaysVisible|adjustPan">
-        </activity>
+            android:name=".old.view.tasklist.CreateTaskActivity"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
+        <activity
+            android:name=".old.view.taskinfo.TaskInfoActivity"
+            android:label="@string/title_activity_task_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".newview.MainActivity"></activity>
     </application>
 
 </manifest>
